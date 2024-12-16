@@ -41,10 +41,12 @@ class Solution:
             return min(cost[i-2] + min_cost(i-2), cost[i-1] + min_cost(i-1))
 
         return min_cost(n)
-        '''
+        
+        
         # Top Down DP (Memoization)
         # T: O(2^n)
         # S: O(n)
+        '''
         n = len(cost)
         memo = {0:0, 1:0}
         def min_cost(i):
@@ -55,22 +57,22 @@ class Solution:
                 return memo[i]
         
         return min_cost(n)
-'''
+        '''
         # Bottom Up DP (Tabulation)
         # T: O(n)
         # S: O(n)
-'''
+        '''
         n = len(cost)
         dp = [0] * (n+1)
         
         for i in range(2, n+1):
             dp[i] = min(dp[i-2]+cost[i-2], dp[i-1]+cost[i-1])
         return dp[n]
-'''
+        '''
         # Bottom Up DP (Two Pointers, Constant Space) 
         # T: O(n)
         # S: O(1)
-    '''
+        '''
         n = len(cost)
         prev, curr = 0, 0
 
