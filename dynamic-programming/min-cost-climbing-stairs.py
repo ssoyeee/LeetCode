@@ -30,9 +30,10 @@ Constraints:
 
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        # Recursive
+        # Recursive ---Time Limit Exceed
         # T: O(2^n)
         # S: O(n)
+        '''
         n = len(cost)
 
         def min_cost(i): #helper func
@@ -41,12 +42,11 @@ class Solution:
             return min(cost[i-2] + min_cost(i-2), cost[i-1] + min_cost(i-1))
 
         return min_cost(n)
-        
-        
+        '''
         # Top Down DP (Memoization)
         # T: O(2^n)
         # S: O(n)
-        '''
+        
         n = len(cost)
         memo = {0:0, 1:0}
         def min_cost(i):
@@ -57,7 +57,7 @@ class Solution:
                 return memo[i]
         
         return min_cost(n)
-        '''
+        
         # Bottom Up DP (Tabulation)
         # T: O(n)
         # S: O(n)
