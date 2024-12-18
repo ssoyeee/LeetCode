@@ -19,14 +19,14 @@ class MyCircularQueue:
             return False
         else:
             self.k[self.front] = None
-            self.front = (self.front+1) % self.maxlen
+            self.front = (self.front + 1) % self.maxlen
             return True      
 
     def Front(self) -> int:
         return -1 if self.k[self.front] is None else self.k[self.front]
 
     def Rear(self) -> int:
-        return -1 if self.k[self.rear] is None else self.k[self.rear-1]
+        return -1 if self.k[self.rear - 1] is None else self.k[self.rear - 1]
 
     def isEmpty(self) -> bool:
         return self.front == self.rear and self.k[self.front] is None
