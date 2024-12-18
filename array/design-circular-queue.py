@@ -1,5 +1,5 @@
 class MyCircularQueue:
-    # ring buffer - make a circle, last position is connected back to first position
+    # ring buffer
     def __init__(self, k: int):
         self.k = [None] * k
         self.maxlen = k
@@ -19,7 +19,8 @@ class MyCircularQueue:
             return False
         else:
             self.k[self.front] = None
-            self.front = (self.front + 1) % self.maxlen
+            self.front = (self.front + 1) % self.maxlen 
+            # %: 포인터의 위치가 전체 길이를 벗어나지 않도록
             return True      
 
     def Front(self) -> int:
@@ -30,7 +31,7 @@ class MyCircularQueue:
 
     def isEmpty(self) -> bool:
         return self.front == self.rear and self.k[self.front] is None
-
+    # rear와 front가 만나게 되면 full
     def isFull(self) -> bool:
         return self.front == self.rear and self.k[self.front] is not None
 
