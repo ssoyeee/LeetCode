@@ -1,7 +1,7 @@
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         result = []
-
+            # 2 non overlapping cases, 1 overlapping case
         for i in range(len(intervals)):
             # end value of newInterval is less than start value of current intervals,
             # non-overlapping, just append it to in front of current intervals
