@@ -6,7 +6,7 @@ class Solution:
         word2count = Counter(s)
         heap = []
         for char, count in word2count.items():
-            heap.append((-count, char))
+            heap.append([-count, char])
         heapify(heap) # avg: O(n)
         answer = ''
         prev = None # not to use it twice in a row
