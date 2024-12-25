@@ -7,12 +7,12 @@ class Solution:
         heap = []
         for word, count in word2count.items():
             heap.append((-count, word)) # maxheap
-    heapify(heap)
-    answer = []
-    for _ in range(k):
-        _, word = heappop(heap)
-        answer.append(word)
-    return answer
+        heapify(heap)
+        answer = []
+        for _ in range(k):
+            _, word = heappop(heap)
+            answer.append(word)
+        return answer
        
     '''
        # error checking
