@@ -3,9 +3,9 @@ from collections import Counter
 
 class Solution:
     def reorganizeString(self, s: str) -> str:
-        word2count = Counter(s)
+        char2count = Counter(s)
         heap = []
-        for char, count in word2count.items():
+        for char, count in char2count.items():
             heap.append([-count, char])
         heapify(heap) # avg: O(n)
         answer = ''
