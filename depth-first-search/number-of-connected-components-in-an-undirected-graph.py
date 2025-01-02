@@ -1,13 +1,14 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         def dfs(index):
-            if not visited and graph[index][i]:
-                visited[index] = True
-                answer += 1
+            visited[index] = True
+            for i in range(n):
+                if not visited[i] and graph[index][i]:
+                    dfs(i)
             
        # Input and initialize
-        graph = [[False] * (n+1) for _ in range(n+1)]
-        visited = [False] * (n+1)
+        graph = [[False] * n for _ in range(n)]
+        visited = [False] * n
         answer = 0
         
         # fill out connected components
@@ -16,7 +17,9 @@ class Solution:
             graph[v][u] = True
         
         # call dfs
-        for i in range(1, n+1):
-            dfs(i)
+        for i in range(n):
+            if not visited[i]:
+                dfs(i)
+                answer += 1  
 
-        return answer-1
+        return answer
