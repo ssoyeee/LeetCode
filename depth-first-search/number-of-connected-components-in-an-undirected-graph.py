@@ -1,8 +1,8 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        # union find
-        parent = [i for i in range(n)]
-        rank = [1] * n
+        # union find - union by rank
+        parent = [i for i in range(n)] # for root
+        rank = [1] * n 
 
         def find(n1):
             result = n1
@@ -30,7 +30,6 @@ class Solution:
         for n1, n2 in edges:
             result -= union(n1, n2)
         return result
-
         '''
         # dfs
         def dfs(index):
