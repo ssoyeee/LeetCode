@@ -32,3 +32,5 @@ class Solution:
                             visited.add(edge)
                 res.append([email2name[email]]+sorted(local_res))
         return res
+# Time: O(NK) * N log K -> O(N * K * N log K) where n is number of accounts and K is max number of emails per user
+# Space: O(NK)
