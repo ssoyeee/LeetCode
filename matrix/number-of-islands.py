@@ -1,5 +1,29 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+        dirY = [-1, 1, 0, 0]
+        dirX = [0, 0, -1, 1]
+        N = len(grid) # num of row
+        M = len(grid[0]) # num of column
+
+        def dfs(y,x):
+            grid[y][x] = "0"
+            
+            for i in range(4):
+                newY = y + dirY[i]
+                newX = x + dirX[i]
+                if 0 <= newY < N and 0 <= newX < M and grid[newY][newX]== "1":
+                        dfs(newY, newX)
+
+            # call dfs
+        answer = 0
+        for i in range(N):
+            for j in range(M):
+                if grid[i][j]=="1":
+                    dfs(i, j)
+                    answer += 1
+        return answer
+        
+        '''
         if not grid: #empty
             return 0
         
@@ -31,3 +55,4 @@ class Solution:
                     bfs(r,c)
                     islands += 1
         return islands
+'''
