@@ -19,4 +19,5 @@ class Solution:
             order[index] += course
             index += 1
         return order if index == numCourses else []
-        
+    # Time: O(V+E)
+    # Space: O(V+E)
