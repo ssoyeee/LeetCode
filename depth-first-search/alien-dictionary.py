@@ -1,11 +1,9 @@
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
-        
         n = len(words)
         graph = defaultdict(set)
         indegrees = {c: 0 for word in words for c in word}
 
-        # Build the graph and compute indegrees
         for i in range(1, n):
             prev, curr = words[i - 1], words[i]
             if prev != curr and prev.startswith(curr):
@@ -18,7 +16,6 @@ class Solution:
                         indegrees[curr[j]] += 1
                     break
 
-        # Perform topological sort using BFS
         queue = deque([c for c in indegrees if indegrees[c] == 0])
         result = []
 
@@ -32,3 +29,6 @@ class Solution:
                     queue.append(dependent_char)
 
         return "".join(result) if len(result) == len(indegrees) else ""
+
+        # Time: O(N * M)
+        # Space: O(V + E)
