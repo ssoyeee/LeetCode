@@ -5,5 +5,7 @@ class Solution:
         for num in nums:
             heappush(min_heap, num)
             if len(min_heap) > k:
-                heappop(min_heap)
+                heappop(min_heap) 
         return min_heap[0]
+        #Time: O(N*logK)
+        #Space: O(K)
