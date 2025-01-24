@@ -23,4 +23,4 @@ class Solution:
                 _, index = heapq.heappop(odd_max_heap)
                 ans.append(arr[index])
 
-        return ans
+        return int(''.join(map(str,ans)))
