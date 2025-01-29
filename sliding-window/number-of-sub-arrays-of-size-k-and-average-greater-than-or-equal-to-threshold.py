@@ -11,3 +11,4 @@ class Solution:
                 i +=1
             j+=1
         return result
+        # Time O(n) Space O(1)
