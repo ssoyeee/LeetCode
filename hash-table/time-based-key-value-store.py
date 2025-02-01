@@ -6,7 +6,7 @@ class TimeMap:
         if not key in self.key_time_map:
             self.key_time_map[key] = {}
 
-        self.key_time_map[key].append([ timestamp, value ])
+        self.key_time_map[key].append([timestamp, value])
 
         
     def get(self, key: str, timestamp: int) -> str:
