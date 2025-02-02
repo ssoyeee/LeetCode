@@ -3,9 +3,11 @@ class TimeMap:
         self.key_time_map = defaultdict(list)
 
     def set(self, key: str, value: str, timestamp: int) -> None:
+        # Time O(1), Space O(K*N)
         self.key_time_map[key].append((timestamp, value))
         
     def get(self, key: str, timestamp: int) -> str:
+        # Time O(logN), Space O(K*N) where K is number of key, N is number of value stored at each key
         if not key in self.key_time_map:
             return ""
 
