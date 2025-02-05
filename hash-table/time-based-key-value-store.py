@@ -15,16 +15,16 @@ class TimeMap:
             return ""
                 
         left = 0
-        right = len(self.key_time_map[key])
+        right = len(self.key_time_map[key]) - 1
                 
-        while left < right:
+        while left <= right:
             mid = (left + right) // 2
             if self.key_time_map[key][mid][0] <= timestamp:
                 left = mid + 1
             else:
-                right = mid
+                right = mid - 1
 
-        return "" if right == 0 else self.key_time_map[key][right - 1][1]
+        return "" if right < 0 else self.key_time_map[key][right][1]
 
 # Your TimeMap object will be instantiated and called as such:
 # obj = TimeMap()
