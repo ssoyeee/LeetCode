@@ -1,34 +1,13 @@
-from heapq import heapify, heappop, heappush
 from collections import Counter
 
-class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        num2count = Counter(nums)
-        heap = []
-        for num, count in num2count.items():
-            heap.append((-count, num))
-        heapify(heap)
-        answer = []
-        for _ in range(k):
-            _, num = heappop(heap)
-            answer.append(num)
-        return answer
-
-
-        '''
-        count = {}
-        freq = [[]for i in range(len(nums)+1)]
-
-        for n in nums:
-            count[n] = 1 + count.get(n,0)
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         
-        for n, c in count.items():
-            freq[c].append(n)
-
-        res = []
-        for i in range(len(freq)-1, 0, -1):
-            for n in freq[i]:
-                res.append(n)
-                if len(res) == k:
-                    return res
-        '''
+        counts = Counter(nums)
+        sorted_counts = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+        return [val for val, freq in sorted_counts[:k]]
