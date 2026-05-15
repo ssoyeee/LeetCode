@@ -12,3 +12,6 @@ class Solution:
             cookie += 1
 
         return child
+
+        # T: O(NlogN) -- sort
+        # S: O(1) -- 2 pointers
