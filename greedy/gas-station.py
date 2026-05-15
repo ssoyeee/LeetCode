@@ -8,3 +8,6 @@ class Solution:
                 start = i +1
                 tank = 0
         return start if total >=0 else -1
+
+        #T: O(N) -- where N is len(gas)
+        #S: O(1) -- three variables
