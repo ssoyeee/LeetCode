@@ -14,3 +14,5 @@ class Solution:
             return self.searchBST(root.left, val)
         if root.val < val:
             return self.searchBST(root.right, val)
+        # T: O(H) -- where H is height of tree, BST pruning
+        # S: O(H) -- where H is height of tree, recursion call stack
