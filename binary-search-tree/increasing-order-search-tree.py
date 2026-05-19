@@ -17,7 +17,7 @@ class Solution(object):
             if node is None:
                 return
             dfs(node.left)
-            self.curr.left = None
+            node.left = None
             self.curr.right = node
             self.curr = node
             
