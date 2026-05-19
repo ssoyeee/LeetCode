@@ -17,9 +17,14 @@ class Solution(object):
             if node is None:
                 return
             dfs(node.left)
-            node.left = None
+            self.curr.left = None
             self.curr.right = node
             self.curr = node
+            
             dfs(node.right)
         dfs(root)
         return dummy.right
+
+        # T: O(N) visit every nodes
+        # S: O(H) recursion call stack
+            
