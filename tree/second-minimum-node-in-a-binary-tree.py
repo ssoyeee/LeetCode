@@ -27,3 +27,6 @@ class Solution(object):
             return min(left, right)
         # root.val is 1st min
         return dfs(root, root.val)
+
+        # T: O(N) -- worst case visit every node, best case O(N/2) 
+        # S: O(H) -- height of tree, recursion call stack
