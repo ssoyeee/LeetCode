@@ -11,10 +11,10 @@ class Solution:
         def dfs(node):
             if node is None:
                 return
-            vals.add(node.val)
+            vals.add(node.val) #store each node's value in a set (duplicates ignored)
             dfs(node.left)
             dfs(node.right)
         dfs(root)
 
-        vals.remove(root.val)
+        vals.remove(root.val) # remove root val (1st min) to find 2nd min
         return min(vals) if vals else -1
