@@ -14,3 +14,7 @@ class Solution:
             vals.add(node.val)
             dfs(node.left)
             dfs(node.right)
+        dfs(root)
+
+        vals.remove(root.val)
+        return min(vals) if vals else -1
