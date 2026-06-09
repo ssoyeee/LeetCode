@@ -1,27 +1,25 @@
 # Definition for a binary tree node.
-# class TreeNode:
+# class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def deepestLeavesSum(self, root: TreeNode) -> int:
-        # dfs recursive
-        self.max_depth = 0
-        self.total = 0
-
-        def dfs(node, depth):
-            if node is None:
-                return
-            if depth > self.max_depth:
-                self.max_depth = depth
-                self.total = node.val
-            elif depth == self.max_depth:
-                self.total += node.val
-            dfs(node.left, depth+1)
-            dfs(node.right, depth+1)
-
-        dfs(root, 0)
-        return self.total
+from collections import deque
+class Solution(object):
+    def deepestLeavesSum(self, root):
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
+        #bfs
+        queue = deque([root])
+        while queue:
+            total = 0
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                total += node.val
+                if node.left: queue.append(node.left)
+                if node.right: queue.append(node.right)
+        return total
         # T: O(N) -- visit every node
-        # S: O(H) -- recursion call stack
+        # S: O(N) -- worst case, max queue size is N/2 (last level nodes)
