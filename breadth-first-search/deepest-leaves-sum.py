@@ -6,19 +6,20 @@
 #         self.right = right
 class Solution:
     def deepestLeavesSum(self, root: TreeNode) -> int:
-        next_level = deque([root,])
-        
-        while next_level:
-            # prepare for the next level
-            curr_level = next_level
-            next_level = deque()
-            
-            for node in curr_level:
-                # add child nodes of the current level
-                # in the queue for the next level
-                if node.left:
-                    next_level.append(node.left)
-                if node.right:
-                    next_level.append(node.right)
-        
-        return sum([node.val for node in curr_level])
+        # dfs recursive
+        self.max_depth = 0
+        self.total = 0
+
+        def dfs(node, depth):
+            if node is None:
+                return
+            if depth > self.max_depth:
+                self.max_depth = depth
+                self.total = node.val
+            elif depth == self.max_depth:
+                self.total += node.val
+            dfs(node.left, depth+1)
+            dfs(node.right, depth+1)
+
+        dfs(root, 0)
+        return self.total
