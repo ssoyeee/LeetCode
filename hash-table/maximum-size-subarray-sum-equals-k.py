@@ -11,3 +11,5 @@ class Solution:
             if prefix_sum not in seen:
                 seen[prefix_sum] = i
         return max_len
+        # T: O(N) -- one pass with hashmap lookup O(1)
+        # S: O(N) -- seen hashmap
