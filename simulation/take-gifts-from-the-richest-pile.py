@@ -10,3 +10,6 @@ class Solution:
             new_val = math.floor(math.sqrt(max_val))
             heapq.heappush(heap, -new_val)
         return sum(-g for g in heap)
+
+        # T: O(K log N) -- K iterations, each heappop/heappush is O(log N)
+        # S: O(N) -- heap stores all gifts
