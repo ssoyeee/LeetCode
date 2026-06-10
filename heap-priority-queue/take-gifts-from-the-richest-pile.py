@@ -7,6 +7,6 @@ class Solution:
 
         for _ in range(k):
             max_val = -heapq.heappop(heap)
-            new_val = math.floot(math.sqrt(max_val))
+            new_val = math.floor(math.sqrt(max_val))
             heapq.heappush(heap, -new_val)
         return sum(-g for g in heap)
