@@ -1,5 +1,6 @@
 class Solution(object):
     def setZeroes(self, matrix: List[List[int]]) -> None:
+        #brute force
         rows = set()
         cols = set()
 
