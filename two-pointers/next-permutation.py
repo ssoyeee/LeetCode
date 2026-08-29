@@ -25,3 +25,6 @@ class Solution:
         # Step 3: everything after i is still in descending order,
         # reverse it to get the smallest possible arrangement
         nums[i+1:] = reversed(nums[i+1:])     
+
+        # Time: O(n) - each step is a linear scan over nums
+        # Space: O(1) - in place swap and reverse
