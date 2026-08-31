@@ -4,6 +4,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        is_negative = x<0
         x = abs(x)
 
         reversed_integer = 0 
@@ -12,6 +13,6 @@ class Solution(object):
             reversed_integer = reversed_integer * 10 + last_digit
             x = x // 10
         
-        if x < 0:
+        if is_negative:
             return -reversed_integer
         return reversed_integer
