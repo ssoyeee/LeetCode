@@ -15,4 +15,7 @@ class Solution(object):
         
         if is_negative:
             return -reversed_integer
+
+        if reversed_integer < -2**31 or reversed_integer >2**31-1:
+            return 0
         return reversed_integer
