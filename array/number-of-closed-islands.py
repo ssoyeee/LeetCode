@@ -25,4 +25,5 @@ class Solution:
                     if dfs(r, c):
                         count += 1
         return count
-            
+        # Time: O(rows*cols) nested loop visits every cell at most once 
+        # Space: O(rows*cols)  recursion call stack could be as deep as the total number of cells
