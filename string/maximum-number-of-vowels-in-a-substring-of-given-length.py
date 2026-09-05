@@ -9,7 +9,7 @@ class Solution:
         for i in range(k):
             count += (s[i] in vowels)
         
-        result = count
+        answer = count
 
         # sliding
         for i in range(k, len(s)):
