@@ -13,6 +13,7 @@ class Solution:
             arr[i] = arr[i-1]+diff[i]
         return arr
         # brute-force: Time O(m * n)
+        
         # difference array + prefix sum
         # Time: O(m+n) -- where m is len(updates), n is length
         # Space: O(n) -- diff and arr arrays
