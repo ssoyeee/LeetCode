@@ -13,3 +13,5 @@ class Solution(object):
             else:
                 result.append([start, end])
         return result
+        # Time: O(n log n) -- sort() O(n log n) + single one pass through intervals O(n)
+        # Space: O(n) -- in the worst case, result array could be size n
