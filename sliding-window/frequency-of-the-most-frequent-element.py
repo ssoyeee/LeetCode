@@ -14,4 +14,6 @@ class Solution:
             if cost <= k:
                 max_freq = max(max_freq, r-l+1)
         return max_freq
-            
+        
+        # Time: O(n log n) -- sort() is O(n log n), sliding window(for+while) is O(n); O(n log n)
+        # Space: O(1) -- three int variables, sort() is in-place
