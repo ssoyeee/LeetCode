@@ -12,6 +12,6 @@ class Solution:
                 l += 1
                 cost = nums[r]*(r-l+1) - window_sum
             if cost <= k:
-                max_freq = r-l+1
+                max_freq = max(max_freq, r-l+1)
         return max_freq
             
