@@ -12,7 +12,7 @@ class Solution(object):
         heap = []
         for num, count in counted_nums.items():
             heapq.heappush(heap, (count, num))
-            if len(heap) >= k:
+            if len(heap) > k:
                 heapq.heappop(heap)
         return [x[1] for x in heap]
 
