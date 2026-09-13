@@ -9,9 +9,7 @@ class Solution(object):
         op = 0
         left = 0
         right = len(nums)-1
-        for i in range(len(nums)):
-            if nums[i] == nums[i-1]:
-                continue
+
         while left < right:
             if nums[left]+nums[right] < k:
                 left += 1
@@ -22,5 +20,6 @@ class Solution(object):
                 left += 1
                 right -= 1
 
-
         return op
+        # Time: O(nlogn) -- sort() + Two pointers O(n)
+        # Space: O(1) -- in-place sort and a few int variables
