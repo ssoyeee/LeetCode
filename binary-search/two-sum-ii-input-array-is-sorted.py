@@ -16,3 +16,5 @@ class Solution(object):
                 right -= 1
             else: # =
                 return [left+1,right+1]
+        # Time: O(n) -- single pass, where n is length of given array 
+        # Space: O(1) -- don't use extra space
