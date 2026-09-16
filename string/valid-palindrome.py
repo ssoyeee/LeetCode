@@ -22,3 +22,5 @@ class Solution(object):
             else:
                 return False            
         return True    
+        # Time: O(n) -- where n is length of s, one pass with two pointers to compare O(n)+ one pass to clean the string O(n)
+        # Space: O(n) -- sentence list
